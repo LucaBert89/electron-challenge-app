@@ -1,9 +1,6 @@
 import {data} from "./arrayList/arrayData.js"
 
-const randomArray = data[Math.floor(Math.random() * data.length)]
-
-
-const countWords = () => {
+export const countWords = (randomArray) => {
     const countArray = {};
 
     randomArray.forEach(e => {
@@ -18,9 +15,9 @@ const mostRepeated = (countArray) => {
     const values = Object.values(countArray);
     const max = Math.max(...values);
 
-    return Object.entries(countArray).map(([key, value]) =>{
-        if(value === max) console.log(key);
-    })
+    const findValue = Object.entries(countArray).filter(([key, value]) => value === max)
+    return findValue[0][0]
 }
 
-countWords();
+const randomArray = data[Math.floor(Math.random() * data.length)]
+countWords(randomArray);   
