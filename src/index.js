@@ -18,7 +18,34 @@ countWords(randomArray);
 
 
 //SECOND CHALLENGE
+var library = [
+    { autore: 'Romeo J. Graifenberg', titolo: 'Il mio ritorno in cucina', libraryID: 1234},
+    { autore: 'Tom H. Marchiori', titolo: 'La mia vita senza acca.', libraryID: 5678},
+    { autore: 'Luca Dalessandro', titolo: 'Dove sono le mie ciabatte?', libraryID: 9101}
+  ];
+  
+  // sort by name
+  const orderItem = (item) => {
+     return typeof item === String ?
+     library.sort(function(a, b) {
+        var stringA = a[item].toUpperCase(); // ignore upper and lowercase
+        var stringB = b[item].toUpperCase(); // ignore upper and lowercase
+        if (stringA < stringB) {
+          return -1;
+        }
+        if (stringA > stringB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      }) : 
+      library.sort(function(a, b) {
+        return a - b;
+      });
+  }
 
+  console.log(orderItem("libraryID"))
 
 
 
@@ -26,8 +53,8 @@ countWords(randomArray);
 const nome = names[1]
 
 const checkedWord = nome.split("").filter(e => e !== " ")
-const reverseWord = [].concat(array).reverse().join("").toLowerCase();
-const toString = array.join("");
+const reverseWord = [].concat(checkedWord).reverse().join("").toLowerCase();
+const toString = checkedWord.join("");
 
 if(toString  === reverseWord) {
     console.log("Ok")
