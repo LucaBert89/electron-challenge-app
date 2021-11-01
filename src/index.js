@@ -1,6 +1,6 @@
-import {mostRepeated} from "./firstChallenge/mostRepeated"
-import {data} from "./firstChallenge/arrayList/arrayData"
-
+import {mostRepeated} from "./firstChallenge/mostRepeated.js"
+import {data} from "./firstChallenge/arrayList/arrayData.js"
+import { names } from "./thirdChallenge/names.js";
 
 //FIRST CHALLENGE
 export const countWords = (randomArray) => {
@@ -23,3 +23,15 @@ countWords(randomArray);
 
 
 //THIRD CHALLENGE
+const nome = names[1]
+
+const checkedWord = nome.split("").filter(e => e !== " ")
+const reverseWord = [].concat(array).reverse().join("").toLowerCase();
+const toString = array.join("");
+
+if(toString  === reverseWord) {
+    console.log("Ok")
+} else {
+    console.log("no")
+}
+
