@@ -1,5 +1,5 @@
 import {data} from "../src/firstChallenge/arrayList/arrayData"
-import { countWords } from "../src/firstChallenge/render";
+import { countWords } from "../src/index";
 
 const mockArray = data[0];
 
