@@ -1,0 +1,22 @@
+{
+  "name": "electron-challenge-app",
+  "version": "1.0.0",
+  "description": "electron-app-challenge",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaBert89/electron-challenge-app.git"
+  },
+  "author": "Luca Bertoldi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucaBert89/electron-challenge-app/issues"
+  },
+  "homepage": "https://github.com/LucaBert89/electron-challenge-app#readme",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  }
+}
