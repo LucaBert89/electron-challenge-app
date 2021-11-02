@@ -1,64 +1,60 @@
-import {mostRepeated} from "./firstChallenge/mostRepeated.js"
+import { countWords } from "./firstChallenge/countWords.js";
 import {data} from "./firstChallenge/arrayList/arrayData.js"
-import { names } from "./thirdChallenge/names.js";
-
+import  {dataList}  from "./secondChallenge/arrayList/arrayData.js";
+import {stringList} from "./thirdChallenge/arrayList/arrayData.js";
+import {checkPalindrome} from "./thirdChallenge/checkPalindrome.js";
+import  {orderItem}  from "./secondChallenge/orderItem.js";
 //FIRST CHALLENGE
-export const countWords = (randomArray) => {
-    const countArray = {};
 
-    randomArray.forEach(e => {
-        countArray[e] ? countArray[e] += 1 : countArray[e] = 1 ;
-    })
-    
-  return mostRepeated(countArray)
-};
 
 const randomArray = data[Math.floor(Math.random() * data.length)]
+const randomList = dataList[Math.floor(Math.random() * data.length)];
+const randomString = stringList[Math.floor(Math.random() * data.length)];
+
+
+
+const visualizeData = (data, taskContainer) => {
+    const dataField = document.createElement("p");
+    dataField.innerText = data;
+    taskContainer.appendChild(dataField)
+}
+
+const sortButtons = (dataList) => {
+    return Object.keys(dataList[0]);
+}
+
+const createButtons = (keys, taskContainer) => {
+    keys.forEach(e => {
+        const button = document.createElement("button");
+        button.innerText = e;
+        taskContainer.appendChild(button);
+    })
+}
+
 countWords(randomArray); 
+window.load = (function() {  
+    const taskContainer = document.querySelectorAll(".app-task");
+    const generalData = [randomArray, JSON.stringify(randomList), randomString];
+    taskContainer.forEach((e,i) => {
+        visualizeData(generalData[i], e)
+    })
+    
+    createButtons(sortButtons(randomList), taskContainer[1])
 
 
-//SECOND CHALLENGE
-var library = [
-    { autore: 'Romeo J. Graifenberg', titolo: 'Il mio ritorno in cucina', libraryID: 1234},
-    { autore: 'Tom H. Marchiori', titolo: 'La mia vita senza acca.', libraryID: 5678},
-    { autore: 'Luca Dalessandro', titolo: 'Dove sono le mie ciabatte?', libraryID: 9101}
-  ];
+})()
+
+
+
+
+
   
-  // sort by name
-  const orderItem = (item) => {
-     return typeof item === String ?
-     library.sort(function(a, b) {
-        var stringA = a[item].toUpperCase(); // ignore upper and lowercase
-        var stringB = b[item].toUpperCase(); // ignore upper and lowercase
-        if (stringA < stringB) {
-          return -1;
-        }
-        if (stringA > stringB) {
-          return 1;
-        }
-      
-        // names must be equal
-        return 0;
-      }) : 
-      library.sort(function(a, b) {
-        return a - b;
-      });
-  }
+ 
 
-  console.log(orderItem("libraryID"))
+console.log(orderItem("libraryID", dataList[1]))
 
 
 
 //THIRD CHALLENGE
-const nome = names[1]
-
-const checkedWord = nome.split("").filter(e => e !== " ")
-const reverseWord = [].concat(checkedWord).reverse().join("").toLowerCase();
-const toString = checkedWord.join("");
-
-if(toString  === reverseWord) {
-    console.log("Ok")
-} else {
-    console.log("no")
-}
+checkPalindrome(stringList)
 
