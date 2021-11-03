@@ -1,4 +1,5 @@
 export const visualizeData = (data,index, taskContainer) => {
+    //visualize the task data: most repeated value, list of elements, string
     return (taskContainer.className === "app-task second_task") ? 
     visualizeSecondTask(data, index, taskContainer) : 
     visualizeFirstThirdTask(data, index, taskContainer)
@@ -20,10 +21,12 @@ export const visualizeFirstThirdTask = (data, index, taskContainer) => {
     taskContainer.appendChild(dataField)
 }
 
+// return the keys of the dataList in order to use them to create sortButtons and to sort
 export const sortKeys = (dataList) => {
     return Object.keys(dataList[0]);
 }
 
+// create the buttons to sort the second Task object based on the keys
 export const createSortButtons = (keys, taskContainer) => {
     keys.forEach(e => {
         const button = document.createElement("button");
@@ -33,12 +36,14 @@ export const createSortButtons = (keys, taskContainer) => {
     })
 }
 
+// result of task one and three
 export const visualizeResult = (finalResult, taskContainer, result) => {
     finalResult.classList.add("app-task__final-result")
     finalResult.innerText = `The result is: ${result}`;
     taskContainer.appendChild(finalResult);
 }
 
+// result of the second task order items
 export const visualizeOrder = (result) => {
     const dataChange = document.querySelectorAll(".app-task__result_1");
     result.forEach((e,i)=> {
