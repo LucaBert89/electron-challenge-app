@@ -34,7 +34,8 @@ export const createSortButtons = (keys, taskContainer) => {
 }
 
 export const visualizeResult = (finalResult, taskContainer, result) => {
-    finalResult.innerText = result;
+    finalResult.classList.add("app-task__final-result")
+    finalResult.innerText = `The result is: ${result}`;
     taskContainer.appendChild(finalResult);
 }
 

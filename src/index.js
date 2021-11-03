@@ -7,9 +7,6 @@ import  {orderItem}  from "./secondChallenge/orderItem.js";
 
 import {visualizeData, sortKeys, createSortButtons, visualizeResult, visualizeOrder} from "./renderDom/renderDom.js"
 
-
-
-
 window.load = (function() {  
     
     const randomArray = data[Math.floor(Math.random() * data.length)]
