@@ -1,12 +1,12 @@
 body {
-    background-color: #FDA9B8;
+    background-color: #1A5DFF;
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin: 3rem;
-    color: #000;
+    color: #FFFFFF;
 }
 
 .app-task__main-title {
-    color: #2B6878;
+    color: #FFFFFF;
     font-size:3em;
 }
 
@@ -17,15 +17,15 @@ body {
 }
 
 .app-task__task-title {
-    color:#2B6878;
-    font-size:1.5em;
+    color:#EB7A67;
+    font-size:2em;
 }
 
 .app-task__button, .app-task__sort-button {
     outline: none;
     background: none;
     cursor: pointer;
-    background-color: #2B6878;
+    background-color: #EB7A67;
     border: 1px solid grey;
     border-radius: 10px;
     padding: 1em;
@@ -34,10 +34,10 @@ body {
 }
 
 .app-task__final-result {
-    color: #2B6878;
+    color: #FFFFFF;
     font-size:1.5em;
 }
 
 .app-task__result_0, .app-task__result_1, .app-task__result_2 {
-    font-size: 2em;
+    font-size: 1.5em;
 } 
