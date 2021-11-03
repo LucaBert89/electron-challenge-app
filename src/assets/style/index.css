@@ -7,6 +7,7 @@ body {
 
 .app-task__main-title {
     color: #2B6878;
+    font-size:3em;
 }
 
 .app-task__container {
@@ -17,6 +18,7 @@ body {
 
 .app-task__task-title {
     color:#2B6878;
+    font-size:1.5em;
 }
 
 .app-task__button, .app-task__sort-button {
@@ -35,3 +37,7 @@ body {
     color: #2B6878;
     font-size:1.5em;
 }
+
+.app-task__result_0, .app-task__result_1, .app-task__result_2 {
+    font-size: 2em;
+} 
