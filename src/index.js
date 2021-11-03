@@ -4,43 +4,42 @@ import  {dataList}  from "./secondChallenge/arrayList/arrayData.js";
 import {stringList} from "./thirdChallenge/arrayList/arrayData.js";
 import {checkPalindrome} from "./thirdChallenge/checkPalindrome.js";
 import  {orderItem}  from "./secondChallenge/orderItem.js";
-//FIRST CHALLENGE
 
-
-const randomArray = data[Math.floor(Math.random() * data.length)]
-const randomList = dataList[Math.floor(Math.random() * data.length)];
-const randomString = stringList[Math.floor(Math.random() * data.length)];
+import {visualizeData, sortKeys, createSortButtons, visualizeResult, visualizeOrder} from "./renderDom/renderDom.js"
 
 
 
-const visualizeData = (data, taskContainer) => {
-    const dataField = document.createElement("p");
-    dataField.innerText = data;
-    taskContainer.appendChild(dataField)
-}
 
-const sortButtons = (dataList) => {
-    return Object.keys(dataList[0]);
-}
-
-const createButtons = (keys, taskContainer) => {
-    keys.forEach(e => {
-        const button = document.createElement("button");
-        button.innerText = e;
-        taskContainer.appendChild(button);
-    })
-}
-
-countWords(randomArray); 
 window.load = (function() {  
+    
+    const randomArray = data[Math.floor(Math.random() * data.length)]
+    const randomList = dataList[Math.floor(Math.random() * dataList.length)];
+    const randomString = stringList[Math.floor(Math.random() * stringList.length)];
+    
+    const buttons = document.querySelectorAll(".app-task__button")
     const taskContainer = document.querySelectorAll(".app-task");
-    const generalData = [randomArray, JSON.stringify(randomList), randomString];
+    createSortButtons(sortKeys(randomList), taskContainer[1])
+    const generalData = [randomArray, randomList, randomString];
+    const finalResult = document.createElement("p");
+    const SecondTaksButtons = document.querySelectorAll(".app-task__sort-button")
+    
     taskContainer.forEach((e,i) => {
-        visualizeData(generalData[i], e)
+        visualizeData(generalData[i],i, e)
+    })
+
+    SecondTaksButtons.forEach(e=> {
+        e.addEventListener("click", e=> {
+            const result = orderItem(e.target.innerText, randomList);
+           visualizeOrder(result, taskContainer[1])
+        })
     })
     
-    createButtons(sortButtons(randomList), taskContainer[1])
 
+    buttons.forEach(e => {
+        e.addEventListener("click", e=> {
+            e.target.innerText === "Show" ? visualizeResult(finalResult, taskContainer[0], countWords(randomArray)) : visualizeResult(finalResult, taskContainer[2], checkPalindrome(randomString))
+        })
+    })
 
 })()
 
@@ -51,10 +50,9 @@ window.load = (function() {
   
  
 
-console.log(orderItem("libraryID", dataList[1]))
+
 
 
 
 //THIRD CHALLENGE
-checkPalindrome(stringList)
 
