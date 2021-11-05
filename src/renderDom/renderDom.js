@@ -17,7 +17,7 @@ export const visualizeSecondTask = (data, index, taskContainer) => {
 export const visualizeFirstThirdTask = (data, index, taskContainer) => {
     const dataField = document.createElement("p");
     dataField.classList.add(`app-task__result_${index}`)
-    dataField.innerText = data;
+    typeof data === "object" ? dataField.innerText = data.join("  ") : dataField.innerText = data;
     taskContainer.appendChild(dataField)
 }
 

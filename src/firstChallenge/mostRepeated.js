@@ -3,7 +3,7 @@ export const mostRepeated = (countArray) => {
     const max = Math.max(...values);
 
     const findValue = Object.entries(countArray).filter(([key, value]) => value === max)
-    return findValue[0][0]
+    return findValue.join().replace(",", ":")
 }
 
   

@@ -12,7 +12,7 @@ window.load = (function() {
     const randomArray = data[Math.floor(Math.random() * data.length)]
     const randomList = dataList[Math.floor(Math.random() * dataList.length)];
     const randomString = stringList[Math.floor(Math.random() * stringList.length)];
-    
+
     const buttons = document.querySelectorAll(".app-task__button")
     const taskContainer = document.querySelectorAll(".app-task");
 

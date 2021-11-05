@@ -10,9 +10,9 @@ const mockArraySort = dataList[0];
 const mockString = stringList[0];
 const mockStringNotPalindrome = stringList[2];
 
-describe('FIRST CHALLENGE: should return the most repeated value in the array', () => {
-    test("should return dog", () => {
-        expect(countWords(mockArray)).toBe("dog");
+describe('FIRST CHALLENGE: should return the most repeated value in the array and how many times the value is repeated', () => {
+    test("should return dog:3", () => {
+        expect(countWords(mockArray)).toBe("dog:3");
     });
 })
 

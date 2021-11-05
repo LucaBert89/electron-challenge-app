@@ -21,7 +21,7 @@ body {
     font-size:2em;
 }
 
-.app-task__button, .app-task__sort-button {
+.app-task__button, .app-task__sort-button, .app-task__refresh_button {
     outline: none;
     background: none;
     cursor: pointer;
@@ -31,6 +31,19 @@ body {
     padding: 1em;
     color:#fff;
     margin:1em;
+}
+
+.app-task__refresh-container {
+    text-align:center;
+}
+
+.app-task__refresh_button {
+  text-align: right;
+}
+
+.app-task__refresh_button:hover {
+    background-color: #fff;
+    color:#EB7A67;
 }
 
 .app-task__final-result {
